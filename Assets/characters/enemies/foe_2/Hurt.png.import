@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca3cxe13a0tir"
-path="res://.godot/imported/Hurt.png-3cd84fc6a36d42fcd9acbe6cfe23c449.ctex"
+path="res://.godot/imported/Hurt.png-4969c8f00a81a1be6ed8c7de1e4f97ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/foe_2/Hurt.png"
-dest_files=["res://.godot/imported/Hurt.png-3cd84fc6a36d42fcd9acbe6cfe23c449.ctex"]
+source_file="res://Assets/characters/enemies/foe_2/Hurt.png"
+dest_files=["res://.godot/imported/Hurt.png-4969c8f00a81a1be6ed8c7de1e4f97ca.ctex"]
 
 [params]
 

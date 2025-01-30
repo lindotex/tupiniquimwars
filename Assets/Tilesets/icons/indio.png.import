@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2umgcslcj31y"
-path="res://.godot/imported/Idle.png-74a981f491997bbae3fde102089c9176.ctex"
+uid="uid://dcovhp7pqshu3"
+path="res://.godot/imported/indio.png-f856c311214d4a0fd10d063a42965d75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/hero/2/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-74a981f491997bbae3fde102089c9176.ctex"]
+source_file="res://Assets/Tilesets/icons/indio.png"
+dest_files=["res://.godot/imported/indio.png-f856c311214d4a0fd10d063a42965d75.ctex"]
 
 [params]
 
