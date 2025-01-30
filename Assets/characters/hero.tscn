@@ -1,18 +1,18 @@
-[gd_scene load_steps=86 format=3 uid="uid://bbuodqt0u1pw5"]
+[gd_scene load_steps=87 format=3 uid="uid://bbuodqt0u1pw5"]
 
-[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_xmqj7"]
-[ext_resource type="Texture2D" uid="uid://lvm787kuptt2" path="res://Assets/characters/hero/3/Attack.png" id="2_y756h"]
-[ext_resource type="Texture2D" uid="uid://56bjf5xeaqkq" path="res://Assets/characters/hero/3/Idle.png" id="3_suy85"]
-[ext_resource type="Texture2D" uid="uid://beadggj2thmgr" path="res://Assets/characters/hero/3/Jump.png" id="4_d7hr6"]
-[ext_resource type="Texture2D" uid="uid://demdsnaditgo8" path="res://Assets/characters/hero/3/JumpAttack.png" id="5_h4uk4"]
-[ext_resource type="Texture2D" uid="uid://dauoqorcixkfn" path="res://Assets/characters/hero/3/Death.png" id="6_edtgt"]
-[ext_resource type="Texture2D" uid="uid://ume1j8dt20i5" path="res://Assets/characters/hero/3/FallAttack.png" id="7_84b78"]
-[ext_resource type="Texture2D" uid="uid://cecluqiuiaqcl" path="res://Assets/characters/hero/3/Hurt.png" id="8_q5js4"]
-[ext_resource type="Texture2D" uid="uid://bd7romfn1hl2e" path="res://Assets/characters/hero/3/Run.png" id="9_l53gb"]
-[ext_resource type="Texture2D" uid="uid://b8rx6gmuhy66d" path="res://Assets/characters/hero/3/RunAttack.png" id="10_kyyv0"]
-[ext_resource type="Texture2D" uid="uid://cvxiwuwpis2qi" path="res://Assets/characters/hero/3/Squad.png" id="11_0dda8"]
-[ext_resource type="Texture2D" uid="uid://braiuuejxob3b" path="res://Assets/characters/hero/3/Walk.png" id="12_ne5j7"]
-[ext_resource type="Texture2D" uid="uid://dumtsppj188qj" path="res://Assets/characters/hero/3/WalkAttack.png" id="13_knlt5"]
+[ext_resource type="Script" path="res://scripts/hero.gd" id="1_prm7t"]
+[ext_resource type="Texture2D" uid="uid://lvm787kuptt2" path="res://assets/characters/hero/3/Attack.png" id="2_y756h"]
+[ext_resource type="Texture2D" uid="uid://56bjf5xeaqkq" path="res://assets/characters/hero/3/Idle.png" id="3_suy85"]
+[ext_resource type="Texture2D" uid="uid://beadggj2thmgr" path="res://assets/characters/hero/3/Jump.png" id="4_d7hr6"]
+[ext_resource type="Texture2D" uid="uid://demdsnaditgo8" path="res://assets/characters/hero/3/JumpAttack.png" id="5_h4uk4"]
+[ext_resource type="Texture2D" uid="uid://dauoqorcixkfn" path="res://assets/characters/hero/3/Death.png" id="6_edtgt"]
+[ext_resource type="Texture2D" uid="uid://ume1j8dt20i5" path="res://assets/characters/hero/3/FallAttack.png" id="7_84b78"]
+[ext_resource type="Texture2D" uid="uid://cecluqiuiaqcl" path="res://assets/characters/hero/3/Hurt.png" id="8_q5js4"]
+[ext_resource type="Texture2D" uid="uid://bd7romfn1hl2e" path="res://assets/characters/hero/3/Run.png" id="9_l53gb"]
+[ext_resource type="Texture2D" uid="uid://b8rx6gmuhy66d" path="res://assets/characters/hero/3/RunAttack.png" id="10_kyyv0"]
+[ext_resource type="Texture2D" uid="uid://cvxiwuwpis2qi" path="res://assets/characters/hero/3/Squad.png" id="11_0dda8"]
+[ext_resource type="Texture2D" uid="uid://braiuuejxob3b" path="res://assets/characters/hero/3/Walk.png" id="12_ne5j7"]
+[ext_resource type="Texture2D" uid="uid://dumtsppj188qj" path="res://assets/characters/hero/3/WalkAttack.png" id="13_knlt5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ux2or"]
 atlas = ExtResource("2_y756h")
@@ -69,6 +69,22 @@ region = Rect2(252, 0, 42, 42)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yn5ud"]
 atlas = ExtResource("6_edtgt")
 region = Rect2(294, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwfqt"]
+atlas = ExtResource("11_0dda8")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kweqt"]
+atlas = ExtResource("11_0dda8")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8do8"]
+atlas = ExtResource("11_0dda8")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ipli"]
+atlas = ExtResource("11_0dda8")
+region = Rect2(126, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l78qo"]
 atlas = ExtResource("7_84b78")
@@ -230,22 +246,6 @@ region = Rect2(168, 0, 42, 42)
 atlas = ExtResource("10_kyyv0")
 region = Rect2(210, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwfqt"]
-atlas = ExtResource("11_0dda8")
-region = Rect2(0, 0, 42, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kweqt"]
-atlas = ExtResource("11_0dda8")
-region = Rect2(42, 0, 42, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8do8"]
-atlas = ExtResource("11_0dda8")
-region = Rect2(84, 0, 42, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ipli"]
-atlas = ExtResource("11_0dda8")
-region = Rect2(126, 0, 42, 42)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_so4ul"]
 atlas = ExtResource("12_ne5j7")
 region = Rect2(0, 0, 42, 42)
@@ -346,6 +346,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwfqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kweqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8do8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ipli")
+}],
+"loop": true,
+"name": &"duck",
 "speed": 8.0
 }, {
 "frames": [{
@@ -505,23 +522,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vwfqt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kweqt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c8do8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ipli")
-}],
-"loop": true,
-"name": &"squat",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_so4ul")
 }, {
 "duration": 1.0,
@@ -567,22 +567,33 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5ltnt"]
-radius = 22.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5x12f"]
+radius = 14.0
+height = 54.0
 
-[node name="Hero" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8l0b"]
+radius = 19.0
+
+[node name="hero" type="CharacterBody2D"]
 disable_mode = 1
-script = ExtResource("1_xmqj7")
+script = ExtResource("1_prm7t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -64)
+position_smoothing_enabled = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, -35)
-scale = Vector2(1.7, 1.675)
+position = Vector2(0, -52)
+scale = Vector2(2.5, 2.463)
 sprite_frames = SubResource("SpriteFrames_pj0wv")
-animation = &"idle"
+animation = &"duck"
 autoplay = "idle"
+frame_progress = 0.782756
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -21)
-shape = SubResource("CircleShape2D_5ltnt")
+position = Vector2(-15, -27)
+shape = SubResource("CapsuleShape2D_5x12f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-14, -43)
+shape = SubResource("CircleShape2D_s8l0b")

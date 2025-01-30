@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0oevutfohryw"]
+
+[ext_resource type="Texture2D" uid="uid://djuuh68og0mad" path="res://assets/characters/hero/Arrows.png" id="1_uxhfc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utgac"]
+atlas = ExtResource("1_uxhfc")
+region = Rect2(22, 18, 19, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p776k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utgac")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 5.0
+}]
+
+[node name="Arrow" type="AnimatedSprite2D"]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_p776k")
+animation = &"arrow"

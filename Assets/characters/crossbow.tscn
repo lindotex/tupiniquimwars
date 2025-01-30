@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c83m5h1fiwn3g"]
+
+[ext_resource type="Texture2D" uid="uid://cq3aohfxnoir8" path="res://assets/characters/hero/3/3.png" id="1_nkdxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0epc"]
+atlas = ExtResource("1_nkdxq")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ois1"]
+atlas = ExtResource("1_nkdxq")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnu36"]
+atlas = ExtResource("1_nkdxq")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa3qw"]
+atlas = ExtResource("1_nkdxq")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm1ei"]
+atlas = ExtResource("1_nkdxq")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voygj"]
+atlas = ExtResource("1_nkdxq")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_imq2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0epc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ois1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnu36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa3qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm1ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voygj")
+}],
+"loop": true,
+"name": &"crossbow",
+"speed": 5.0
+}]
+
+[node name="Crossbow" type="AnimatedSprite2D"]
+position = Vector2(0, -21)
+sprite_frames = SubResource("SpriteFrames_imq2b")
+animation = &"crossbow"
