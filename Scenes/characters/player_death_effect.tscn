@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqh1icfmytoqb"]
+
+[ext_resource type="Script" path="res://scripts/hero/player_death_effect.gd" id="1_c1is6"]
+[ext_resource type="Texture2D" uid="uid://dauoqorcixkfn" path="res://Assets/characters/hero/3/Death.png" id="2_fseuf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trxtc"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cugoo"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ollkn"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2gw5"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nir5t"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h4gj"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx42o"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(252, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5sai"]
+atlas = ExtResource("2_fseuf")
+region = Rect2(294, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1u7pl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trxtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cugoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ollkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2gw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nir5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h4gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx42o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5sai")
+}],
+"loop": false,
+"name": &"death_effect",
+"speed": 7.0
+}]
+
+[node name="PlayerDeathEffect" type="Node2D"]
+script = ExtResource("1_c1is6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.57628e-07, -54)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_1u7pl")
+animation = &"death_effect"
+frame = 7
+frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
