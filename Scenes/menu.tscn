@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://df47jdctmubgl"]
-
-[node name="Menu" type="Node2D"]
-position = Vector2(318, 204)

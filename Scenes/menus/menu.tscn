@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://df47jdctmubgl"]
+
+[ext_resource type="Texture2D" uid="uid://dnm7dyxostnbe" path="res://assets/background/menu.png" id="1_a3aui"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_lgduj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpwag"]
+atlas = ExtResource("1_a3aui")
+
+[sub_resource type="LabelSettings" id="LabelSettings_64nxo"]
+font_size = 32
+font_color = Color(1, 0.0823529, 0.117647, 1)
+outline_color = Color(1, 1, 0.227451, 1)
+shadow_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6fya"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvqnq"]
+font_size = 32
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 318.0
+offset_top = 204.0
+offset_right = 318.0
+offset_bottom = 204.0
+script = ExtResource("1_lgduj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(161.875, 67.1255)
+scale = Vector2(0.654518, 0.587062)
+texture = SubResource("AtlasTexture_jpwag")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -310.0
+offset_top = 144.0
+offset_right = -23.0
+offset_bottom = 281.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 86.0
+offset_right = 921.0
+offset_bottom = 131.0
+text = "TUPINIQUIN' WARS"
+label_settings = SubResource("LabelSettings_64nxo")
+
+[node name="New Game" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 281.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="Panel/New Game"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 3.0
+offset_right = 238.0
+offset_bottom = 54.0
+text = "New Game"
+label_settings = SubResource("LabelSettings_p6fya")
+
+[node name="Quit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 70.0
+offset_right = 281.0
+offset_bottom = 131.0
+
+[node name="Label" type="Label" parent="Panel/Quit"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 7.0
+offset_right = 181.0
+offset_bottom = 52.0
+text = "QUIT"
+label_settings = SubResource("LabelSettings_kvqnq")
