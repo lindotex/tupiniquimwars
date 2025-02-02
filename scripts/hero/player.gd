@@ -1,69 +1,72 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d = $Sprite2D
 
-enum State { Idle, Run, Falling, Jump}
+@export var GRAVITY = 1000
+@export var walking_speed: float = 300
+@export var JUMP_FORCE: int = 500
+@export var JUMP_HORIZONTAL: int = 100
+@export var highscore: int = 0
+var RUNNING_SPEED = walking_speed * 1.5
 
-const GRAVITY = 1000
-const WALKING_SPEED = 300
-const RUNNING_SPEED = 500
-const JUMP_FORCE = 500
-
-var current_state 
+enum State { Idle, Run, Walk, Falling, Jump}
+var current_state
 
 #var arrow = preload(arrow.tscn)
 var player_death_effect = preload("res://Scenes/characters/player_death_effect.tscn")
-
 
 func _ready():
 	current_state = State.Idle
 	pass
 
-func _physics_process(delta)->void:
+func _physics_process(delta: float)->void:
 	player_falling(delta)
 	player_idle(delta)
-	player_run(delta)
+	player_walk(delta)
 	player_jump(delta)
 	
 	print("Current State:", State.keys()[current_state])
 	
 	move_and_slide()
 
-func player_falling(delta):
-	if !is_on_floor():
+func player_falling(delta: float):
+	if !is_on_floor() and !player_jump(delta):
 		velocity.y += GRAVITY * delta
 		current_state = State.Falling
 
-func player_jump(delta):
+func player_jump(delta: float):
 	var jumping = Input.is_action_pressed("jump")
 	if is_on_floor() and jumping:
 		velocity.y += -JUMP_FORCE
 		current_state = State.Jump
 	if !is_on_floor() and current_state == State.Jump:
-		var direction = Input.get_axis("left", "right")
-		velocity.x += direction * 100 * delta
+		var direction = input_movement()
+		velocity.x += direction * JUMP_HORIZONTAL * delta
 
-
-func player_idle(delta):
+func player_idle(delta: float):
 	if is_on_floor():
 		current_state = State.Idle
 
-func player_run(delta):
-	var direction = Input.get_axis("left", "right")	
+func player_walk(delta: float):
+	var direction = input_movement()
 	if direction:
-		velocity.x = direction * RUNNING_SPEED
+		velocity.x = direction * walking_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, RUNNING_SPEED)
+		velocity.x = move_toward(velocity.x, 0, walking_speed)
 	if direction != 0:
 		current_state = State.Run
 		animated_sprite_2d.flip_h = false if direction > 0 else true
 
 func player_animations():
+	if current_state == State.Walk:
+		animated_sprite_2d.play("walk")
 	if current_state == State.Idle:
 		animated_sprite_2d.play("idle")
-	elif current_state == State.Run:
-		animated_sprite_2d.play("run")
 	elif current_state == State.Jump:
 		animated_sprite_2d.play("jump")
+
+func input_movement():
+	var direction: float = Input.get_axis("left", "right")
+	return direction
 
 func player_death()->void:
 	var player_death_effect_instance = player_death_effect.initiate() as Node2D

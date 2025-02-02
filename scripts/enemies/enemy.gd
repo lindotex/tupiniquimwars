@@ -1,20 +1,30 @@
 extends CharacterBody2D
 
-var GRAVITY = 700
-var speed = 100
-var direction = 1
+@export var GRAVITY: int = 700
+@export var speed: int = 100
+var direction: Vector2 = Vector2.LEFT
+
+enum State {Idle, Walk}
+var current_state = State
+
+func _ready():
+	current_state = State.Idle
 
 func _physics_process(delta: float) -> void:
-	# Adiciona a gravidade.
-	if not is_on_floor():
-		velocity.y += GRAVITY * delta
-	
-	# Movimento básico de patrulha
-	velocity.x = speed * direction * delta
+	enemy_gravity(delta)
+	enemy_idle(delta)
 
-	# Mova o personagem
 	move_and_slide()
 
-	# Inverta a direção se atingir uma borda
-	if is_on_wall():
-		direction *= -1
+
+func enemy_gravity(delta:float):
+	velocity.y = GRAVITY * delta
+
+# Idle
+func enemy_idle(delta:float):
+	velocity.x = move_toward(velocity.x, 0, speed * delta)
+	current_state = State.Idle
+
+func enemy_walk(delta:float):
+	velocity.x = direction * GRAVITY * delta
+	current_state = State.walk

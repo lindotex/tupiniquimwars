@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cfeggrsh3esw3"]
+[gd_scene load_steps=30 format=4 uid="uid://cfeggrsh3esw3"]
 
 [ext_resource type="Texture2D" uid="uid://kp321v521rgh" path="res://Assets/tileset/Tileset.png" id="1_5v30b"]
 [ext_resource type="Texture2D" uid="uid://b2as57jmiln3a" path="res://Assets/background/layers/1.png" id="1_ewa1s"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://o3yunpkukure" path="res://Assets/trees/2.png" id="8_qf6et"]
 [ext_resource type="PackedScene" uid="uid://bbuodqt0u1pw5" path="res://Scenes/characters/player.tscn" id="10_8to5r"]
 [ext_resource type="Script" path="res://Scenes/characters/PlayerCamera2D.gd" id="12_328da"]
+[ext_resource type="PackedScene" uid="uid://cc34fnjd7gder" path="res://Scenes/characters/enemy-3.tscn" id="13_io1qt"]
 [ext_resource type="PackedScene" uid="uid://cyuy30wulurm4" path="res://Scenes/animals/sloth.tscn" id="13_ldxn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ra0i"]
@@ -3626,6 +3627,7 @@ position = Vector2(-171, -96)
 
 [node name="hero" parent="Environment/Fase 1/Solo" instance=ExtResource("10_8to5r")]
 position = Vector2(665, -175)
+highscore = 100
 
 [node name="Sloth" parent="Environment/Fase 1" instance=ExtResource("13_ldxn3")]
 position = Vector2(913, -158)
@@ -3633,3 +3635,6 @@ position = Vector2(913, -158)
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("12_328da")
 player = NodePath("../Environment/Fase 1/Solo/hero")
+
+[node name="Enemy-3" parent="." instance=ExtResource("13_io1qt")]
+position = Vector2(377, 0)
