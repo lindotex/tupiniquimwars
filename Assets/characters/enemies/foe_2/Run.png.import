@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2v2366k2xyp2"
-path="res://.godot/imported/Run.png-74ffc95d1cc919e6283c26c4e2f2b93d.ctex"
+path="res://.godot/imported/Run.png-da60df2989db96d56e3efd2e74704037.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/enemies/foe_2/Run.png"
-dest_files=["res://.godot/imported/Run.png-74ffc95d1cc919e6283c26c4e2f2b93d.ctex"]
+source_file="res://assets/characters/enemies/foe_2/Run.png"
+dest_files=["res://.godot/imported/Run.png-da60df2989db96d56e3efd2e74704037.ctex"]
 
 [params]
 

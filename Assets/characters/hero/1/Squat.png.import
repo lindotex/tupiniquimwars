@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://82a5k2ouqek8"
-path="res://.godot/imported/Squat.png-4b16da1473228eee59a2aaec166b774e.ctex"
+path="res://.godot/imported/Squat.png-f952ebaabd13267458319c7ad45815a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/hero/1/Squat.png"
-dest_files=["res://.godot/imported/Squat.png-4b16da1473228eee59a2aaec166b774e.ctex"]
+source_file="res://assets/characters/hero/1/Squat.png"
+dest_files=["res://.godot/imported/Squat.png-f952ebaabd13267458319c7ad45815a0.ctex"]
 
 [params]
 

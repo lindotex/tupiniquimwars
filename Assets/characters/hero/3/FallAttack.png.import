@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ume1j8dt20i5"
-path="res://.godot/imported/FallAttack.png-bbff35d272fe4d176fdd68e50377a85f.ctex"
+path="res://.godot/imported/FallAttack.png-6c8a92bd55d5fce694e6d99827758998.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/hero/3/FallAttack.png"
-dest_files=["res://.godot/imported/FallAttack.png-bbff35d272fe4d176fdd68e50377a85f.ctex"]
+source_file="res://assets/characters/hero/3/FallAttack.png"
+dest_files=["res://.godot/imported/FallAttack.png-6c8a92bd55d5fce694e6d99827758998.ctex"]
 
 [params]
 

@@ -1,15 +1,15 @@
-[gd_scene load_steps=57 format=3 uid="uid://76rjjf6m2psj"]
+[gd_scene load_steps=56 format=3 uid="uid://76rjjf6m2psj"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_cphoa"]
-[ext_resource type="Texture2D" uid="uid://d20ccvsimbkac" path="res://Assets/characters/enemies/foe_1/Attack_1.png" id="2_ecw6y"]
-[ext_resource type="Texture2D" uid="uid://cmcq1coewdgk0" path="res://Assets/characters/enemies/foe_1/Attack_2.png" id="3_rk00g"]
-[ext_resource type="Texture2D" uid="uid://cjji70hk0e1a1" path="res://Assets/characters/enemies/foe_1/Run+Attack.png" id="4_o3mer"]
-[ext_resource type="Texture2D" uid="uid://ccvee11vamk1i" path="res://Assets/characters/enemies/foe_1/Dead.png" id="5_jmsuu"]
-[ext_resource type="Texture2D" uid="uid://dsq2kkmdy3qko" path="res://Assets/characters/enemies/foe_1/Hurt.png" id="6_hpj1l"]
-[ext_resource type="Texture2D" uid="uid://bjktb5e75xn1p" path="res://Assets/characters/enemies/foe_1/Idle.png" id="7_3qx2b"]
-[ext_resource type="Texture2D" uid="uid://d2405jnb0bqyk" path="res://Assets/characters/enemies/foe_1/Jump.png" id="8_51ux3"]
-[ext_resource type="Texture2D" uid="uid://byr3k0r6vv1jp" path="res://Assets/characters/enemies/foe_1/Run.png" id="9_x4crj"]
-[ext_resource type="Texture2D" uid="uid://dp7npta7f25ku" path="res://Assets/characters/enemies/foe_1/Walk.png" id="10_7uyf6"]
+[ext_resource type="Texture2D" uid="uid://d20ccvsimbkac" path="res://assets/characters/enemies/foe_1/Attack_1.png" id="2_ecw6y"]
+[ext_resource type="Texture2D" uid="uid://cmcq1coewdgk0" path="res://assets/characters/enemies/foe_1/Attack_2.png" id="3_rk00g"]
+[ext_resource type="Texture2D" uid="uid://cjji70hk0e1a1" path="res://assets/characters/enemies/foe_1/Run+Attack.png" id="4_o3mer"]
+[ext_resource type="Texture2D" uid="uid://ccvee11vamk1i" path="res://assets/characters/enemies/foe_1/Dead.png" id="5_jmsuu"]
+[ext_resource type="Texture2D" uid="uid://dsq2kkmdy3qko" path="res://assets/characters/enemies/foe_1/Hurt.png" id="6_hpj1l"]
+[ext_resource type="Texture2D" uid="uid://bjktb5e75xn1p" path="res://assets/characters/enemies/foe_1/Idle.png" id="7_3qx2b"]
+[ext_resource type="Texture2D" uid="uid://d2405jnb0bqyk" path="res://assets/characters/enemies/foe_1/Jump.png" id="8_51ux3"]
+[ext_resource type="Texture2D" uid="uid://byr3k0r6vv1jp" path="res://assets/characters/enemies/foe_1/Run.png" id="9_x4crj"]
+[ext_resource type="Texture2D" uid="uid://dp7npta7f25ku" path="res://assets/characters/enemies/foe_1/Walk.png" id="10_7uyf6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5ygv"]
 atlas = ExtResource("2_ecw6y")
@@ -360,9 +360,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q313v"]
-radius = 20.0998
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbkw8"]
 radius = 19.0
 height = 82.0
@@ -379,12 +376,8 @@ autoplay = "idle"
 frame_progress = 0.627049
 offset = Vector2(0, -48)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-5, -66)
-shape = SubResource("CircleShape2D_q313v")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-6, -42)
 shape = SubResource("CapsuleShape2D_mbkw8")
+one_way_collision = true
+debug_color = Color(0.929412, 0, 0, 0.419608)

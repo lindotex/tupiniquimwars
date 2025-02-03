@@ -14,7 +14,7 @@ config/name="Tupiniquim Wars"
 config/description="An exciting game about the fight of the indigenous people of Pindorama, trying to expell the Portuguese colonizers from their land. Portuguese empire are trying to stabilish their \"colony\", changing our lands' name to Brazil. Help our Hero on this EPIC battle.	"
 run/main_scene="res://Scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Assets/Tilesets/icons/indio.png"
+config/icon="res://assets/icons/indio.png"
 
 [display]
 

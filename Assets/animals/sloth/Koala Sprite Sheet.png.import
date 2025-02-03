@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvv6pcfw47dkl"
-path="res://.godot/imported/Koala Sprite Sheet.png-b11b309aa859e2fe0ac942c7d59f34d6.ctex"
+path="res://.godot/imported/Koala Sprite Sheet.png-83f12ff5087497a9d2727a55e83ab2f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/sloth/Koala Sprite Sheet.png"
-dest_files=["res://.godot/imported/Koala Sprite Sheet.png-b11b309aa859e2fe0ac942c7d59f34d6.ctex"]
+source_file="res://assets/animals/sloth/Koala Sprite Sheet.png"
+dest_files=["res://.godot/imported/Koala Sprite Sheet.png-83f12ff5087497a9d2727a55e83ab2f2.ctex"]
 
 [params]
 

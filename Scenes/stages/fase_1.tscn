@@ -1,18 +1,18 @@
 [gd_scene load_steps=30 format=4 uid="uid://cfeggrsh3esw3"]
 
-[ext_resource type="Texture2D" uid="uid://kp321v521rgh" path="res://Assets/tileset/Tileset.png" id="1_5v30b"]
-[ext_resource type="Texture2D" uid="uid://b2as57jmiln3a" path="res://Assets/background/layers/1.png" id="1_ewa1s"]
-[ext_resource type="Texture2D" uid="uid://d12ig0ulf71g0" path="res://Assets/trees/1.png" id="2_a3t00"]
-[ext_resource type="Texture2D" uid="uid://d4axw0wvspfp2" path="res://Assets/background/layers/2.png" id="2_t0rch"]
-[ext_resource type="Texture2D" uid="uid://c0ntdd82hgvy2" path="res://Assets/background/layers/3.png" id="3_6nqsc"]
-[ext_resource type="Texture2D" uid="uid://c7qxup6100cni" path="res://Assets/background/layers/4.png" id="4_v2c67"]
-[ext_resource type="Texture2D" uid="uid://c4opy242v8aj4" path="res://Assets/background/layers/5.png" id="5_sftvg"]
-[ext_resource type="PackedScene" uid="uid://dsd6kg5xysfyy" path="res://Assets/plataforms/earth_plataform.tscn" id="8_cltr1"]
-[ext_resource type="Texture2D" uid="uid://o3yunpkukure" path="res://Assets/trees/2.png" id="8_qf6et"]
-[ext_resource type="PackedScene" uid="uid://bbuodqt0u1pw5" path="res://Scenes/characters/player.tscn" id="10_8to5r"]
+[ext_resource type="Texture2D" uid="uid://kp321v521rgh" path="res://assets/tileset/Tileset.png" id="1_5v30b"]
+[ext_resource type="Texture2D" uid="uid://b2as57jmiln3a" path="res://assets/background/layers/1.png" id="1_ewa1s"]
+[ext_resource type="Texture2D" uid="uid://d12ig0ulf71g0" path="res://assets/trees/1.png" id="2_a3t00"]
+[ext_resource type="Texture2D" uid="uid://d4axw0wvspfp2" path="res://assets/background/layers/2.png" id="2_t0rch"]
+[ext_resource type="Texture2D" uid="uid://c0ntdd82hgvy2" path="res://assets/background/layers/3.png" id="3_6nqsc"]
+[ext_resource type="Texture2D" uid="uid://c7qxup6100cni" path="res://assets/background/layers/4.png" id="4_v2c67"]
+[ext_resource type="Texture2D" uid="uid://c4opy242v8aj4" path="res://assets/background/layers/5.png" id="5_sftvg"]
+[ext_resource type="PackedScene" uid="uid://dsd6kg5xysfyy" path="res://assets/plataforms/earth_plataform.tscn" id="8_cltr1"]
+[ext_resource type="Texture2D" uid="uid://o3yunpkukure" path="res://assets/trees/2.png" id="8_qf6et"]
+[ext_resource type="PackedScene" uid="uid://bbuodqt0u1pw5" path="res://scenes/characters/player.tscn" id="10_8to5r"]
 [ext_resource type="Script" path="res://Scenes/characters/PlayerCamera2D.gd" id="12_328da"]
-[ext_resource type="PackedScene" uid="uid://cc34fnjd7gder" path="res://Scenes/characters/enemy-3.tscn" id="13_io1qt"]
-[ext_resource type="PackedScene" uid="uid://cyuy30wulurm4" path="res://Scenes/animals/sloth.tscn" id="13_ldxn3"]
+[ext_resource type="PackedScene" uid="uid://cc34fnjd7gder" path="res://scenes/characters/enemy-3.tscn" id="13_io1qt"]
+[ext_resource type="PackedScene" uid="uid://cyuy30wulurm4" path="res://scenes/animals/sloth.tscn" id="13_ldxn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ra0i"]
 texture = ExtResource("4_v2c67")
@@ -3638,3 +3638,11 @@ player = NodePath("../Environment/Fase 1/Solo/hero")
 
 [node name="Enemy-3" parent="." instance=ExtResource("13_io1qt")]
 position = Vector2(377, 0)
+
+[node name="patrol_points" type="Node" parent="Enemy-3"]
+
+[node name="Point1" type="Marker2D" parent="Enemy-3/patrol_points"]
+position = Vector2(294, -62)
+
+[node name="Point2" type="Marker2D" parent="Enemy-3/patrol_points"]
+position = Vector2(451, -61)
