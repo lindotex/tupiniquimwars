@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdw7f4n4hey6d"
-path="res://.godot/imported/dialog box character finished talking click to continue indicator - spritesheet .png-b4db44069966bc5716575c669b1b2013.ctex"
+path="res://.godot/imported/dialog box character finished talking click to continue indicator - spritesheet .png-2ede3a78493cf82b0987e264d91fbaa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dialouge UI/dialog box character finished talking click to continue indicator - spritesheet .png"
-dest_files=["res://.godot/imported/dialog box character finished talking click to continue indicator - spritesheet .png-b4db44069966bc5716575c669b1b2013.ctex"]
+source_file="res://assets/Dialouge UI/dialog box character finished talking click to continue indicator - spritesheet .png"
+dest_files=["res://.godot/imported/dialog box character finished talking click to continue indicator - spritesheet .png-2ede3a78493cf82b0987e264d91fbaa4.ctex"]
 
 [params]
 

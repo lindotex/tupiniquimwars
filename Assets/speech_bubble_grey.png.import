@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy0qsefoakgqg"
-path="res://.godot/imported/speech_bubble_grey.png-f389bbaba328b99bdf16c6dcf7faf1ac.ctex"
+path="res://.godot/imported/speech_bubble_grey.png-49f7ad52a0514a5063ef079c5f93c217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/speech_bubble_grey.png"
-dest_files=["res://.godot/imported/speech_bubble_grey.png-f389bbaba328b99bdf16c6dcf7faf1ac.ctex"]
+source_file="res://assets/speech_bubble_grey.png"
+dest_files=["res://.godot/imported/speech_bubble_grey.png-49f7ad52a0514a5063ef079c5f93c217.ctex"]
 
 [params]
 

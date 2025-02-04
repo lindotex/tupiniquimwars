@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhbi33vecc88u"
-path="res://.godot/imported/Square Buttons 19x26.png-a3e0120228ef584f6d71938d7d94599f.ctex"
+path="res://.godot/imported/Square Buttons 19x26.png-a398d159523ebb9d89df38f116987391.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/buttons/Square Buttons 19x26.png"
-dest_files=["res://.godot/imported/Square Buttons 19x26.png-a3e0120228ef584f6d71938d7d94599f.ctex"]
+source_file="res://assets/buttons/Square Buttons 19x26.png"
+dest_files=["res://.godot/imported/Square Buttons 19x26.png-a398d159523ebb9d89df38f116987391.ctex"]
 
 [params]
 

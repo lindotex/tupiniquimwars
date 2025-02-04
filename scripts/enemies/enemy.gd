@@ -6,7 +6,8 @@ extends CharacterBody2D
 @export var gravity: int = 700
 @export var speed: int = 600
 
-enum State {Idle, Walk}
+enum State { Idle, Walk }
+
 var current_state = State
 var direction : Vector2 = Vector2.LEFT
 var number_of_points: int
@@ -16,7 +17,6 @@ var current_point_position: int
 
 
 func _ready():
-	# Patrol Points
 	if patrol_points != null:
 		number_of_points = patrol_points.get_children().size()
 		for point in patrol_points.get_children():
@@ -24,33 +24,22 @@ func _ready():
 		current_point = point_positions[current_point_position]
 	else:
 		print("No patrol Points associated")
-		
-	# Main State 
 	current_state = State.Idle
 
 func _physics_process(delta) -> void:
-	# Verifying Gravity
 	enemy_gravity(delta)
-	
-	#Verifying which state the character is:
 	enemy_idle(delta)
 	enemy_walk(delta)
-	
-	# Move character
 	move_and_slide()
 	animation()
 
-# Setting the gravity
 func enemy_gravity(delta:float):
 	velocity.y = gravity * delta
 
-# Idle State
 func enemy_idle(delta:float):
 	velocity.x = move_toward(velocity.x, 0, speed * delta)
 	current_state = State.Idle
 
-
-# Walk State
 func enemy_walk(delta):
 	# Patrol function
 	if abs(position.x - current_point.x) > 0.5:
@@ -71,7 +60,6 @@ func enemy_walk(delta):
 	else:
 		direction = Vector2.LEFT
 	animated_sprite2D.flip_h = direction.x<0
-	
 
 func animation():
 	if current_state == State.Idle:

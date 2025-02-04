@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8qip2rwerusi"
-path="res://.godot/imported/spr_coin_roj.png-03ad746a9277d737a5df89ca8ef41981.ctex"
+path="res://.godot/imported/spr_coin_roj.png-50cc65c187b8b1763842fa21fafdc279.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Coin_Gems/spr_coin_roj.png"
-dest_files=["res://.godot/imported/spr_coin_roj.png-03ad746a9277d737a5df89ca8ef41981.ctex"]
+source_file="res://assets/Coin_Gems/spr_coin_roj.png"
+dest_files=["res://.godot/imported/spr_coin_roj.png-50cc65c187b8b1763842fa21fafdc279.ctex"]
 
 [params]
 

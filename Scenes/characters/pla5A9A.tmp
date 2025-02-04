@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bbuodqt0u1pw5"]
+[gd_scene load_steps=88 format=3 uid="uid://bbuodqt0u1pw5"]
 
 [ext_resource type="Script" path="res://scripts/hero/player.gd" id="1_abnoc"]
 [ext_resource type="Shader" path="res://Assets/characters/hero/player.gdshader" id="2_co47y"]
@@ -113,14 +113,6 @@ region = Rect2(168, 0, 42, 42)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cath0"]
 atlas = ExtResource("7_84b78")
 region = Rect2(210, 0, 42, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7vxjh"]
-atlas = ExtResource("11_0dda8")
-region = Rect2(84, 0, 42, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3oein"]
-atlas = ExtResource("11_0dda8")
-region = Rect2(126, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sde1o"]
 atlas = ExtResource("8_q5js4")
@@ -402,17 +394,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vxjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3oein")
-}],
-"loop": true,
-"name": &"falling",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_sde1o")
 }, {
 "duration": 1.0,
@@ -606,10 +587,8 @@ use_parent_material = true
 position = Vector2(0, -52)
 scale = Vector2(2.5, 2.463)
 sprite_frames = SubResource("SpriteFrames_pj0wv")
-animation = &"falling"
+animation = &"run"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.586686
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2

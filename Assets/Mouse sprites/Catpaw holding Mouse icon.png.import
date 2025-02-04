@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmtirjrxamfbc"
-path="res://.godot/imported/Catpaw holding Mouse icon.png-ab97617138ae9b2255dcd4a3d04028b4.ctex"
+path="res://.godot/imported/Catpaw holding Mouse icon.png-6ff2a6c9447d159b6aa611119a412bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Mouse sprites/Catpaw holding Mouse icon.png"
-dest_files=["res://.godot/imported/Catpaw holding Mouse icon.png-ab97617138ae9b2255dcd4a3d04028b4.ctex"]
+source_file="res://assets/Mouse sprites/Catpaw holding Mouse icon.png"
+dest_files=["res://.godot/imported/Catpaw holding Mouse icon.png-6ff2a6c9447d159b6aa611119a412bf6.ctex"]
 
 [params]
 
