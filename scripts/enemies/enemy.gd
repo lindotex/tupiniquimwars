@@ -1,20 +1,19 @@
 extends CharacterBody2D
-@onready var patrol_points: Node = $patrol_points
+@export var patrol_points: Node
 @onready var animated_sprite2D = $AnimatedSprite2D
 @onready var timer = $Timer
 
 @export var gravity: int = 700
-@export var speed: int = 2000
-
-var direction : Vector2
-var number_of_points: int
-var point_positions: Array[Vector2]
-var current_point
-var current_point_position: int
-var can_walk :bool = false
+@export var speed: int = 600
 
 enum State {Idle, Walk}
 var current_state = State
+var direction : Vector2 = Vector2.LEFT
+var number_of_points: int
+var point_positions: Array[Vector2]
+var current_point: Vector2
+var current_point_position: int
+
 
 func _ready():
 	# Patrol Points
@@ -25,13 +24,13 @@ func _ready():
 		current_point = point_positions[current_point_position]
 	else:
 		print("No patrol Points associated")
+		
 	# Main State 
 	current_state = State.Idle
 
 func _physics_process(delta) -> void:
 	# Verifying Gravity
 	enemy_gravity(delta)
-	animation()
 	
 	#Verifying which state the character is:
 	enemy_idle(delta)
@@ -39,6 +38,7 @@ func _physics_process(delta) -> void:
 	
 	# Move character
 	move_and_slide()
+	animation()
 
 # Setting the gravity
 func enemy_gravity(delta:float):
@@ -46,15 +46,12 @@ func enemy_gravity(delta:float):
 
 # Idle State
 func enemy_idle(delta:float):
-	if !can_walk:
-		velocity.x = move_toward(velocity.x, 0, speed * delta)
-		current_state = State.Idle
-		
+	velocity.x = move_toward(velocity.x, 0, speed * delta)
+	current_state = State.Idle
+
+
 # Walk State
 func enemy_walk(delta):
-	if !can_walk:
-		return
-	
 	# Patrol function
 	if abs(position.x - current_point.x) > 0.5:
 		velocity.x = direction.x * speed * delta
@@ -74,16 +71,10 @@ func enemy_walk(delta):
 	else:
 		direction = Vector2.LEFT
 	animated_sprite2D.flip_h = direction.x<0
-	can_walk = false
-	timer.start()
 	
-	
+
 func animation():
 	if current_state == State.Idle:
 		animated_sprite2D.play("idle")
 	if current_state == State.Walk:
-		animated_sprite2D.play("walk")
-
-
-func _on_timer_timeout() -> void:
-	can_walk = true
+		animated_sprite2D.play("run")

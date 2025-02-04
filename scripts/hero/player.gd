@@ -56,7 +56,7 @@ func player_idle(delta: float):
 func player_walk(delta: float):
 	var direction = input_movement()
 	if direction:
-		velocity.x = direction * walking_speed
+		velocity.x = direction * walking_speed	
 	else:
 		velocity.x = move_toward(velocity.x, 0, walking_speed)
 	if direction != 0:

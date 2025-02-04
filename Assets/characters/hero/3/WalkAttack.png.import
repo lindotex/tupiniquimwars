@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dumtsppj188qj"
-path="res://.godot/imported/WalkAttack.png-48a58223cc3ca6d52a10a4f6d47ae919.ctex"
+path="res://.godot/imported/WalkAttack.png-8298adf4d617f8d93223b3ab0b189bcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hero/3/WalkAttack.png"
-dest_files=["res://.godot/imported/WalkAttack.png-48a58223cc3ca6d52a10a4f6d47ae919.ctex"]
+source_file="res://Assets/characters/hero/3/WalkAttack.png"
+dest_files=["res://.godot/imported/WalkAttack.png-8298adf4d617f8d93223b3ab0b189bcf.ctex"]
 
 [params]
 

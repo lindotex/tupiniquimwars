@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" path="res://scripts/hero/player.gd" id="1_abnoc"]
 [ext_resource type="Shader" path="res://Assets/characters/hero/player.gdshader" id="2_co47y"]
-[ext_resource type="Texture2D" uid="uid://lvm787kuptt2" path="res://assets/characters/hero/3/Attack.png" id="2_y756h"]
-[ext_resource type="Texture2D" uid="uid://56bjf5xeaqkq" path="res://assets/characters/hero/3/Idle.png" id="3_suy85"]
-[ext_resource type="Texture2D" uid="uid://beadggj2thmgr" path="res://assets/characters/hero/3/Jump.png" id="4_d7hr6"]
-[ext_resource type="Texture2D" uid="uid://demdsnaditgo8" path="res://assets/characters/hero/3/JumpAttack.png" id="5_h4uk4"]
-[ext_resource type="Texture2D" uid="uid://dauoqorcixkfn" path="res://assets/characters/hero/3/Death.png" id="6_edtgt"]
-[ext_resource type="Texture2D" uid="uid://ume1j8dt20i5" path="res://assets/characters/hero/3/FallAttack.png" id="7_84b78"]
-[ext_resource type="Texture2D" uid="uid://cecluqiuiaqcl" path="res://assets/characters/hero/3/Hurt.png" id="8_q5js4"]
-[ext_resource type="Texture2D" uid="uid://bd7romfn1hl2e" path="res://assets/characters/hero/3/Run.png" id="9_l53gb"]
-[ext_resource type="Texture2D" uid="uid://b8rx6gmuhy66d" path="res://assets/characters/hero/3/RunAttack.png" id="10_kyyv0"]
-[ext_resource type="Texture2D" uid="uid://cvxiwuwpis2qi" path="res://assets/characters/hero/3/Squad.png" id="11_0dda8"]
-[ext_resource type="Texture2D" uid="uid://braiuuejxob3b" path="res://assets/characters/hero/3/Walk.png" id="12_ne5j7"]
-[ext_resource type="Texture2D" uid="uid://dumtsppj188qj" path="res://assets/characters/hero/3/WalkAttack.png" id="13_knlt5"]
+[ext_resource type="Texture2D" uid="uid://lvm787kuptt2" path="res://Assets/characters/hero/3/Attack.png" id="2_y756h"]
+[ext_resource type="Texture2D" uid="uid://56bjf5xeaqkq" path="res://Assets/characters/hero/3/Idle.png" id="3_suy85"]
+[ext_resource type="Texture2D" uid="uid://beadggj2thmgr" path="res://Assets/characters/hero/3/Jump.png" id="4_d7hr6"]
+[ext_resource type="Texture2D" uid="uid://demdsnaditgo8" path="res://Assets/characters/hero/3/JumpAttack.png" id="5_h4uk4"]
+[ext_resource type="Texture2D" uid="uid://dauoqorcixkfn" path="res://Assets/characters/hero/3/Death.png" id="6_edtgt"]
+[ext_resource type="Texture2D" uid="uid://ume1j8dt20i5" path="res://Assets/characters/hero/3/FallAttack.png" id="7_84b78"]
+[ext_resource type="Texture2D" uid="uid://cecluqiuiaqcl" path="res://Assets/characters/hero/3/Hurt.png" id="8_q5js4"]
+[ext_resource type="Texture2D" uid="uid://bd7romfn1hl2e" path="res://Assets/characters/hero/3/Run.png" id="9_l53gb"]
+[ext_resource type="Texture2D" uid="uid://b8rx6gmuhy66d" path="res://Assets/characters/hero/3/RunAttack.png" id="10_kyyv0"]
+[ext_resource type="Texture2D" uid="uid://cvxiwuwpis2qi" path="res://Assets/characters/hero/3/Squad.png" id="11_0dda8"]
+[ext_resource type="Texture2D" uid="uid://braiuuejxob3b" path="res://Assets/characters/hero/3/Walk.png" id="12_ne5j7"]
+[ext_resource type="Texture2D" uid="uid://dumtsppj188qj" path="res://Assets/characters/hero/3/WalkAttack.png" id="13_knlt5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ewbea"]
 shader = ExtResource("2_co47y")
@@ -576,7 +576,9 @@ radius = 14.0
 height = 66.0
 
 [node name="player" type="CharacterBody2D"]
+z_index = 5
 disable_mode = 1
+collision_layer = 2
 script = ExtResource("1_abnoc")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
