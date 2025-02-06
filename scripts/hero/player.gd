@@ -1,4 +1,8 @@
 extends CharacterBody2D
+class_name Hero
+
+signal collected(collectable)
+
 @onready var animated_sprite_2d = $Sprite2D
 @onready var coin: Node2D = $"../Coin"
 
@@ -8,7 +12,6 @@ extends CharacterBody2D
 @export var Jump_x_force: int = 600
 @export var highscore: int = 0
 var running_speed = 600
-var _is_crouching = false
 
 enum State { Idle, Run, Walk, Falling, Jump, Menu, Attack, Aim, Duck, Hurt}
 var current_state
@@ -164,3 +167,6 @@ func player_animations():
 		animated_sprite_2d.play("duck")
 	elif current_state == State.Hurt:
 		animated_sprite_2d.play("hurt")
+
+func collect_gems(collectable):
+	collected.emit(collected)

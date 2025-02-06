@@ -1,18 +1,20 @@
-[gd_scene load_steps=22 format=4 uid="uid://cfeggrsh3esw3"]
+[gd_scene load_steps=24 format=4 uid="uid://cfeggrsh3esw3"]
 
-[ext_resource type="Texture2D" uid="uid://kp321v521rgh" path="res://assets/tileset/Tileset.png" id="1_5v30b"]
-[ext_resource type="Texture2D" uid="uid://d12ig0ulf71g0" path="res://assets/trees/1.png" id="2_a3t00"]
-[ext_resource type="Texture2D" uid="uid://c4opy242v8aj4" path="res://assets/background/layers/5.png" id="5_sftvg"]
-[ext_resource type="PackedScene" uid="uid://267drig8f00d" path="res://scenes/items/gem.tscn" id="7_mvpdu"]
-[ext_resource type="Texture2D" uid="uid://o3yunpkukure" path="res://assets/trees/2.png" id="8_qf6et"]
-[ext_resource type="PackedScene" uid="uid://dct3lgstpevvs" path="res://scenes/characters/enemy-2.tscn" id="9_fhqtk"]
-[ext_resource type="PackedScene" uid="uid://bbuodqt0u1pw5" path="res://scenes/characters/player.tscn" id="10_8to5r"]
-[ext_resource type="PackedScene" uid="uid://76rjjf6m2psj" path="res://scenes/characters/enemy-1.tscn" id="10_osrss"]
-[ext_resource type="PackedScene" uid="uid://dri8jff2ktnog" path="res://scenes/animals/pidgen.tscn" id="11_jpeqo"]
+[ext_resource type="Texture2D" uid="uid://kp321v521rgh" path="res://Assets/tileset/Tileset.png" id="1_5v30b"]
+[ext_resource type="Script" path="res://Scripts/stages/fase_1.gd" id="1_l0t7c"]
+[ext_resource type="Texture2D" uid="uid://d12ig0ulf71g0" path="res://Assets/trees/1.png" id="2_a3t00"]
+[ext_resource type="PackedScene" uid="uid://cqcrb6xni3ygq" path="res://Scenes/menus/score.tscn" id="2_cju4l"]
+[ext_resource type="Texture2D" uid="uid://c4opy242v8aj4" path="res://Assets/background/layers/5.png" id="5_sftvg"]
+[ext_resource type="PackedScene" uid="uid://267drig8f00d" path="res://Scenes/items/gem.tscn" id="7_mvpdu"]
+[ext_resource type="Texture2D" uid="uid://o3yunpkukure" path="res://Assets/trees/2.png" id="8_qf6et"]
+[ext_resource type="PackedScene" uid="uid://dct3lgstpevvs" path="res://Scenes/characters/enemy-2.tscn" id="9_fhqtk"]
+[ext_resource type="PackedScene" uid="uid://bbuodqt0u1pw5" path="res://Scenes/characters/player.tscn" id="10_8to5r"]
+[ext_resource type="PackedScene" uid="uid://76rjjf6m2psj" path="res://Scenes/characters/enemy-1.tscn" id="10_osrss"]
+[ext_resource type="PackedScene" uid="uid://dri8jff2ktnog" path="res://Scenes/animals/pidgen.tscn" id="11_jpeqo"]
 [ext_resource type="Script" path="res://Scenes/characters/PlayerCamera2D.gd" id="12_328da"]
 [ext_resource type="Script" path="res://scripts/stages/killzone.gd" id="12_p77hc"]
-[ext_resource type="PackedScene" uid="uid://cc34fnjd7gder" path="res://scenes/characters/enemy-3.tscn" id="13_io1qt"]
-[ext_resource type="PackedScene" uid="uid://cyuy30wulurm4" path="res://scenes/animals/sloth.tscn" id="13_ldxn3"]
+[ext_resource type="PackedScene" uid="uid://cc34fnjd7gder" path="res://Scenes/characters/enemy-3.tscn" id="13_io1qt"]
+[ext_resource type="PackedScene" uid="uid://cyuy30wulurm4" path="res://Scenes/animals/sloth.tscn" id="13_ldxn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bq0il"]
 texture = ExtResource("5_sftvg")
@@ -733,8 +735,13 @@ sources/2 = SubResource("TileSetAtlasSource_v01ji")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yu6qo"]
 
-[node name="Fase1" type="Node2D"]
+[node name="Fase1" type="Node2D" node_paths=PackedStringArray("hero", "ui")]
 position = Vector2(-8, -59)
+script = ExtResource("1_l0t7c")
+hero = NodePath("hero")
+ui = NodePath("UI")
+
+[node name="UI" parent="." instance=ExtResource("2_cju4l")]
 
 [node name="Environment" type="Node2D" parent="."]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqal3p3etoqh7"
-path="res://.godot/imported/Pidgeon Sprite Sheet.png-45b9664d62feb9d0a3542d0c86d6b72c.ctex"
+path="res://.godot/imported/Pidgeon Sprite Sheet.png-8f88f3c21ab107331124227651012a32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animals/pidgeon/Pidgeon Sprite Sheet.png"
-dest_files=["res://.godot/imported/Pidgeon Sprite Sheet.png-45b9664d62feb9d0a3542d0c86d6b72c.ctex"]
+source_file="res://Assets/animals/pidgeon/Pidgeon Sprite Sheet.png"
+dest_files=["res://.godot/imported/Pidgeon Sprite Sheet.png-8f88f3c21ab107331124227651012a32.ctex"]
 
 [params]
 

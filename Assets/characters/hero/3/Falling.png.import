@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy5e6wf2uxw2o"
-path="res://.godot/imported/Falling.png-646470a1fe2c58c2fa01951699fb2d36.ctex"
+path="res://.godot/imported/Falling.png-96a50fdfd6a117eb880fb8acf3f344c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hero/3/Falling.png"
-dest_files=["res://.godot/imported/Falling.png-646470a1fe2c58c2fa01951699fb2d36.ctex"]
+source_file="res://Assets/characters/hero/3/Falling.png"
+dest_files=["res://.godot/imported/Falling.png-96a50fdfd6a117eb880fb8acf3f344c9.ctex"]
 
 [params]
 

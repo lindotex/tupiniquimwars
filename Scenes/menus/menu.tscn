@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://df47jdctmubgl"]
+[gd_scene load_steps=4 format=3 uid="uid://df47jdctmubgl"]
 
 [ext_resource type="FontFile" uid="uid://ccnityb8alr5q" path="res://font/pixelFont-7-8x14-sproutLands.ttf" id="1_8h7m4"]
+[ext_resource type="Theme" uid="uid://bj1141n67lrk" path="res://themes/ui_menu.tres" id="1_go3io"]
+[ext_resource type="Script" path="res://scripts/stages/menu.gd" id="1_h0lqa"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_go3io")
+script = ExtResource("1_h0lqa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,24 +48,45 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonsVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("1_8h7m4")
 text = "New Game
 "
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Start")
+theme_override_fonts/font = ExtResource("1_8h7m4")
+text = "Settings
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Start")
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../Settings")
 theme_override_fonts/font = ExtResource("1_8h7m4")
 text = "Quit"
-
-[node name="Configuration" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
-layout_mode = 2

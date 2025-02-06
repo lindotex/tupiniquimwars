@@ -3,4 +3,4 @@ extends Area2D
 @onready var hero: CharacterBody2D = $"../hero"
 
 func _on_body_exited(body):
-	print(body +"You died")
+	print(body +"You died");

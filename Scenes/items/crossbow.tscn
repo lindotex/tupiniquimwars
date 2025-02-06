@@ -1,58 +1,65 @@
-[gd_scene load_steps=9 format=3 uid="uid://c83m5h1fiwn3g"]
+[gd_scene load_steps=10 format=3 uid="uid://c83m5h1fiwn3g"]
 
-[ext_resource type="Texture2D" uid="uid://cq3aohfxnoir8" path="res://assets/characters/hero/3/3.png" id="1_nkdxq"]
+[ext_resource type="Script" path="res://scripts/items/crossbow.gd" id="1_1abvk"]
+[ext_resource type="Texture2D" uid="uid://cq3aohfxnoir8" path="res://Assets/characters/hero/3/3.png" id="1_nkdxq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p0epc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgf3q"]
 atlas = ExtResource("1_nkdxq")
 region = Rect2(0, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ois1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf4om"]
 atlas = ExtResource("1_nkdxq")
 region = Rect2(42, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wnu36"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r207n"]
 atlas = ExtResource("1_nkdxq")
 region = Rect2(84, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oa3qw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoobq"]
 atlas = ExtResource("1_nkdxq")
 region = Rect2(126, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hm1ei"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr54x"]
 atlas = ExtResource("1_nkdxq")
 region = Rect2(168, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_voygj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_krdvy"]
 atlas = ExtResource("1_nkdxq")
 region = Rect2(210, 0, 42, 42)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_imq2b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ek64w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p0epc")
+"texture": SubResource("AtlasTexture_xgf3q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ois1")
+"texture": SubResource("AtlasTexture_jf4om")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wnu36")
+"texture": SubResource("AtlasTexture_r207n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oa3qw")
+"texture": SubResource("AtlasTexture_xoobq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hm1ei")
+"texture": SubResource("AtlasTexture_pr54x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_voygj")
+"texture": SubResource("AtlasTexture_krdvy")
 }],
 "loop": true,
-"name": &"crossbow",
-"speed": 5.0
+"name": &"default",
+"speed": 8.0
 }]
 
-[node name="Crossbow" type="AnimatedSprite2D"]
+[node name="Crossbow" type="Node2D"]
 position = Vector2(0, -21)
-sprite_frames = SubResource("SpriteFrames_imq2b")
-animation = &"crossbow"
+script = ExtResource("1_1abvk")
+
+[node name="crossbow" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ek64w")
+frame = 1
+frame_progress = 0.746286
+
+[node name="reloadtimer" type="Timer" parent="crossbow"]
