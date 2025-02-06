@@ -1,0 +1,160 @@
+[gd_scene load_steps=21 format=3 uid="uid://dri8jff2ktnog"]
+
+[ext_resource type="Script" path="res://scenes/animals/pidgen.gd" id="1_82cum"]
+[ext_resource type="Texture2D" uid="uid://dqal3p3etoqh7" path="res://assets/animals/pidgeon/Pidgeon Sprite Sheet.png" id="2_5acj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyedf"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2dmb"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvhqd"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiajg"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bkky"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b6mi"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na4l0"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxlok"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obhbn"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0q1k"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f44eo"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dske3"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfjkm"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72fjn"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e55c7"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lpij"]
+atlas = ExtResource("2_5acj5")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbcas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyedf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2dmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvhqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiajg")
+}],
+"loop": true,
+"name": &"eat",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bkky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b6mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na4l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxlok")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obhbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0q1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f44eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dske3")
+}],
+"loop": true,
+"name": &"landing",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfjkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72fjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e55c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lpij")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mijry"]
+radius = 11.0
+
+[node name="Pidgen" type="CharacterBody2D"]
+script = ExtResource("1_82cum")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vbcas")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.437237
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -12)
+shape = SubResource("CircleShape2D_mijry")
+
+[node name="Timer" type="Timer" parent="."]

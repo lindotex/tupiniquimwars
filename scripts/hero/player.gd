@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var GRAVITY = 1000
 @export var walking_speed: float = 250
 @export var Jump_y_force: int = 500
-@export var Jump_x_force: int = 200
+@export var Jump_x_force: int = 600
 @export var highscore: int = 0
 var running_speed = 600
 var _is_crouching = false
@@ -41,18 +41,22 @@ func input_movement():
 	return direction
 	
 func player_falling(delta: float):
-	if !is_on_floor() and !player_jump(delta):
+	if !is_on_floor() and State.Walk:
+		var direction = input_movement()
 		velocity.y += GRAVITY * delta
+		velocity.x = direction * Jump_x_force * delta
 		current_state = State.Falling
 
 func player_jump(delta: float):
 	var jumping = Input.is_action_pressed("jump")
+	
 	if is_on_floor() and jumping:
 		velocity.y += -Jump_y_force
 		current_state = State.Jump
 	if !is_on_floor() and current_state == State.Jump:
 		var direction = input_movement()
-		velocity.x += direction * velocity.x * delta
+		velocity.x = direction * Jump_x_force * delta
+		current_state = State.Jump
 
 func player_idle(delta: float)->void:
 	var direction = input_movement()
@@ -91,11 +95,18 @@ func player_walk(delta: float)->void:
 		##player_death()
 
 func player_run(delta: float)->void:
+	# Get Run Input
 	var running = Input.is_action_pressed("run")
+	# Get Direction of the movement
 	var direction = input_movement()
+	# Verify if player is running on floor
 	if is_on_floor() and running:
-		velocity.x = direction * running_speed
-		current_state = State.Run
+		# Don't Play Run Animation while not moving
+		if !direction:
+			current_state = State.Idle
+		else:
+			velocity.x = direction * running_speed
+			current_state = State.Run
 	if !is_on_floor() and current_state == State.Run:
 		velocity.x += direction * running_speed * delta
 
@@ -112,7 +123,14 @@ func player_attack():
 		print("Player Atacou")
 
 func player_aim():
-	pass
+	var direction = input_movement()
+	var aiming = Input.is_action_pressed("aim")
+	
+	if direction and aiming:
+		velocity.x = direction * 0
+		current_state = State.Attack
+	else:
+		velocity.x = move_toward(velocity.x, 0, 0)
 
 # VOLTAR PARA TERMINAR ESSA JOÇA::::::::::::::::::::::::::::::
 func player_duck():
