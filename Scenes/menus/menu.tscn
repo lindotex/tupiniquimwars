@@ -1,83 +1,67 @@
-[gd_scene load_steps=7 format=3 uid="uid://df47jdctmubgl"]
+[gd_scene load_steps=2 format=3 uid="uid://df47jdctmubgl"]
 
-[ext_resource type="Texture2D" uid="uid://dnm7dyxostnbe" path="res://assets/background/menu.png" id="1_a3aui"]
-[ext_resource type="Script" path="res://scripts/stages/menu.gd" id="1_lgduj"]
+[ext_resource type="FontFile" uid="uid://ccnityb8alr5q" path="res://font/pixelFont-7-8x14-sproutLands.ttf" id="1_8h7m4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpwag"]
-atlas = ExtResource("1_a3aui")
-
-[sub_resource type="LabelSettings" id="LabelSettings_64nxo"]
-font_size = 32
-font_color = Color(1, 0.0823529, 0.117647, 1)
-outline_color = Color(1, 1, 0.227451, 1)
-shadow_size = 10
-
-[sub_resource type="LabelSettings" id="LabelSettings_p6fya"]
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_kvqnq"]
-font_size = 32
-
-[node name="Menu" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 318.0
-offset_top = 204.0
-offset_right = 318.0
-offset_bottom = 204.0
-script = ExtResource("1_lgduj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0636673, 0.0961339, 0.179725, 0.639216)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasModulate"]
-position = Vector2(-78.1252, -24.3745)
-scale = Vector2(0.325976, 0.38728)
-texture = SubResource("AtlasTexture_jpwag")
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = -304.0
-offset_top = 70.0
-offset_right = 158.0
-offset_bottom = 119.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 79.0
-offset_top = -39.0
-offset_right = 374.0
-offset_bottom = 6.0
-text = "TUPINIQUIN' WARS"
-label_settings = SubResource("LabelSettings_64nxo")
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_8h7m4")
+theme_override_font_sizes/font_size = 32
+text = "Tupiniquim's Wars"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="New Game" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 204.0
-offset_bottom = 49.0
+[node name="ButtonsVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="Panel/New Game"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = -1.0
-offset_right = 184.0
-offset_bottom = 44.0
-text = "New Game"
-label_settings = SubResource("LabelSettings_p6fya")
-language = "en_GB"
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_8h7m4")
+text = "New Game
+"
 
-[node name="Quit" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 260.0
-offset_right = 460.0
-offset_bottom = 50.0
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_8h7m4")
+text = "Quit"
 
-[node name="Label" type="Label" parent="Panel/Quit"]
-layout_mode = 0
-offset_left = 69.0
-offset_top = 2.0
-offset_right = 146.0
-offset_bottom = 47.0
-text = "QUIT"
-label_settings = SubResource("LabelSettings_kvqnq")
+[node name="Configuration" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+layout_mode = 2
