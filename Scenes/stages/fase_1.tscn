@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cfeggrsh3esw3"]
+[gd_scene load_steps=25 format=4 uid="uid://cfeggrsh3esw3"]
 
 [ext_resource type="Texture2D" uid="uid://kp321v521rgh" path="res://Assets/tileset/Tileset.png" id="1_5v30b"]
 [ext_resource type="Script" path="res://Scripts/stages/fase_1.gd" id="1_l0t7c"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/stages/killzone.gd" id="12_p77hc"]
 [ext_resource type="PackedScene" uid="uid://cc34fnjd7gder" path="res://Scenes/characters/enemy-3.tscn" id="13_io1qt"]
 [ext_resource type="PackedScene" uid="uid://cyuy30wulurm4" path="res://Scenes/animals/sloth.tscn" id="13_ldxn3"]
+[ext_resource type="PackedScene" uid="uid://c83m5h1fiwn3g" path="res://Scenes/items/crossbow.tscn" id="15_0wkva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bq0il"]
 texture = ExtResource("5_sftvg")
@@ -848,8 +849,12 @@ position = Vector2(-31, -60)
 position = Vector2(140, -59)
 
 [node name="hero" parent="." instance=ExtResource("10_8to5r")]
+unique_name_in_owner = true
 position = Vector2(-196, 0)
 highscore = 100
+
+[node name="Crossbow" parent="hero" instance=ExtResource("15_0wkva")]
+position = Vector2(140.001, 125.6)
 
 [node name="Pidgen" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("11_jpeqo")]
 position = Vector2(-1503, -16)

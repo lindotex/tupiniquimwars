@@ -7,11 +7,21 @@ signal start_game()
 @onready var settings = %Settings as Button
 @onready var quit = %Quit as Button
 
+
 func _ready() -> void:
 	focus_button()
-	new_game.button_down.connect(_on_new_game_pressed)
-	settings.button_down.connect(_on_settings_pressed)
-	quit.button_down.connect(_on_quit_pressed)
+	if !new_game: 
+		pass
+	else:
+		new_game.button_down.connect(_on_new_game_pressed)
+	if !settings:
+		pass
+	else:
+		settings.button_down.connect(_on_settings_pressed)
+	if !quit:
+		pass
+	else:
+		quit.button_down.connect(_on_quit_pressed)
 	pass
 
 func _on_new_game_pressed() -> void:

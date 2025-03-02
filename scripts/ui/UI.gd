@@ -17,7 +17,7 @@ func _update_score_label()->void:
 
 func _on_collected(collectable)->void:
 	if collectable:
-		score += 1
+		score += 10
 
 func _on_reload_progress(progress)->void:
 	reload_progress.value = progress

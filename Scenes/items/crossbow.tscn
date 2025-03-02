@@ -63,3 +63,6 @@ frame = 1
 frame_progress = 0.746286
 
 [node name="reloadtimer" type="Timer" parent="crossbow"]
+one_shot = true
+
+[connection signal="timeout" from="crossbow/reloadtimer" to="." method="_on_reloadtimer_timeout"]

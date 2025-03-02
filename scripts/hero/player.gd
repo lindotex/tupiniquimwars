@@ -2,8 +2,11 @@ extends CharacterBody2D
 class_name Hero
 
 signal collected(collectable)
-
+signal reloaded()
+signal reload_progress(progress)
+#@onready var crossbow = $Crossbow
 @onready var animated_sprite_2d = $Sprite2D
+@onready var collider = $ColisionShape2D
 @onready var coin: Node2D = $"../Coin"
 
 @export var GRAVITY = 1000
@@ -11,7 +14,8 @@ signal collected(collectable)
 @export var Jump_y_force: int = 500
 @export var Jump_x_force: int = 600
 @export var highscore: int = 0
-var running_speed = 600
+@export var running_speed = 600
+@export var crossbow: Crossbow
 
 enum State { Idle, Run, Walk, Falling, Jump, Menu, Attack, Aim, Duck, Hurt}
 var current_state
@@ -22,6 +26,9 @@ var menu_scene = "res://scenes/menus/menu.tscn" # Alterar para Pause
 
 func _ready():
 	current_state = State.Idle
+	if crossbow != null:
+		crossbow.reloaded.connect(func () : reloaded.emit())
+		crossbow.reload_progress.connect(func(progress):reload_progress.emit(progress))
 	pass
 
 func _physics_process(delta: float)->void:
@@ -31,7 +38,7 @@ func _physics_process(delta: float)->void:
 	player_walk(delta)
 	player_run(delta)
 	player_attack()
-	player_duck()
+	player_duck(delta)
 	player_hurt()
 	player_aim()
 	menu_call()
@@ -136,7 +143,7 @@ func player_aim():
 		velocity.x = move_toward(velocity.x, 0, 0)
 
 # VOLTAR PARA TERMINAR ESSA JOÇA::::::::::::::::::::::::::::::
-func player_duck():
+func player_duck(delta: float):
 	var duck = Input.is_action_pressed("down")
 	var direction = input_movement()
 	if is_on_floor() and duck:

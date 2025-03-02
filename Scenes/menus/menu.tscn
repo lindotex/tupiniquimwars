@@ -39,6 +39,7 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_8h7m4")
@@ -46,6 +47,7 @@ theme_override_font_sizes/font_size = 32
 text = "Tupiniquim's Wars"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="ButtonsVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

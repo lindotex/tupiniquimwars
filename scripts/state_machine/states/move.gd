@@ -6,6 +6,8 @@ var fall_state: State
 var idle_state: State
 @export
 var jump_state: State
+@export
+var velocity: int
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_pressed('jump') and parent.is_on_floor():
